@@ -95,7 +95,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Created/Modified files during execution:
-# - pomodoro.ui
-# - main.py
