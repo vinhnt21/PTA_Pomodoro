@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pomodoro Timer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #F5E6CA;
+}
+
+QLabel {
+    color: #4A4238;
+    font-family: 'Times New Roman';
+    font-size: 14px;
+}
+
+#timerLabel {
+    color: #8B4513;
+    font-size: 72px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #E8D5B5;
+    border: 3px double #8B4513;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+QPushButton {
+    background-color: #D2B48C;
+    color: #4A4238;
+    border: 2px solid #8B4513;
+    padding: 8px;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    min-height: 40px;
+    margin: 5px;
+}
+
+QPushButton:hover {
+    background-color: #C19A6B;
+}
+
+QPushButton:pressed {
+    background-color: #AA856A;
+    border-style: inset;
+}
+
+#startButton {
+    background-color: #DEB887;
+    border: 2px solid #8B4513;
+}
+
+#startButton:hover {
+    background-color: #CD853F;
+}
+
+#resetButton {
+    background-color: #BC8F8F;
+    border: 2px solid #8B4513;
+}
+
+#resetButton:hover {
+    background-color: #A0522D;
+}
+
+QSpinBox {
+    background-color: #E8D5B5;
+    color: #4A4238;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 30px;
+    min-width: 80px;
+    font-family: 'Times New Roman';
+    font-size: 14px;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #D2B48C;
+    border: 1px solid #8B4513;
+    width: 20px;
+}
+
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #C19A6B;
+}
+
+QSpinBox::up-arrow {
+    image: none;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #8B4513;
+}
+
+QSpinBox::down-arrow {
+    image: none;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #8B4513;
+}
+
+QCheckBox {
+    color: #4A4238;
+    font-family: 'Times New Roman';
+    font-size: 14px;
+    spacing: 10px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8B4513;
+    border-radius: 4px;
+    background-color: #E8D5B5;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #D2B48C;
+    image: url(check.png);
+}
+
+QCheckBox::indicator:hover {
+    background-color: #DEB887;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="timerLabel">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>25:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Work Time (minutes):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="workTimeSpinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>60</number>
+        </property>
+        <property name="value">
+         <number>25</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Break Time (minutes):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="breakTimeSpinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>30</number>
+        </property>
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="startButton">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="resetButton">
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="musicCheckBox">
+      <property name="text">
+       <string>Play Background Music</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
